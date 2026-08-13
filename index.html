@@ -39,7 +39,7 @@
         <script src="js/labels.js"></script>
         <script src="js/leaflet.photon.js"></script>
         <script src="js/leaflet-measure.js"></script>
-        <script src="data/levantamiento_CircunvCamBahia_Idahue_1.js"></script>
+        <script src="data/reasintervenidasparalimpieza_1.js"></script>
         <script src="data/Colector_2.js"></script>
         <script src="data/Cmara_3.js"></script>
         <script>
@@ -151,7 +151,7 @@
         });
         layer_GoogleSatelliteHybrid_0;
         map.addLayer(layer_GoogleSatelliteHybrid_0);
-        function pop_levantamiento_CircunvCamBahia_Idahue_1(feature, layer) {
+        function pop_reasintervenidasparalimpieza_1(feature, layer) {
             var popupContent = '<table>\
                     <tr>\
                         <th scope="row">nombre</th>\
@@ -193,9 +193,9 @@
 			layer.bindPopup(content, { maxHeight: 400 });
         }
 
-        function style_levantamiento_CircunvCamBahia_Idahue_1_0() {
+        function style_reasintervenidasparalimpieza_1_0() {
             return {
-                pane: 'pane_levantamiento_CircunvCamBahia_Idahue_1',
+                pane: 'pane_reasintervenidasparalimpieza_1',
                 stroke: false, 
                 fill: true,
                 fillOpacity: 1,
@@ -203,20 +203,20 @@
                 interactive: true,
             }
         }
-        map.createPane('pane_levantamiento_CircunvCamBahia_Idahue_1');
-        map.getPane('pane_levantamiento_CircunvCamBahia_Idahue_1').style.zIndex = 401;
-        map.getPane('pane_levantamiento_CircunvCamBahia_Idahue_1').style['mix-blend-mode'] = 'normal';
-        var layer_levantamiento_CircunvCamBahia_Idahue_1 = new L.geoJson(json_levantamiento_CircunvCamBahia_Idahue_1, {
+        map.createPane('pane_reasintervenidasparalimpieza_1');
+        map.getPane('pane_reasintervenidasparalimpieza_1').style.zIndex = 401;
+        map.getPane('pane_reasintervenidasparalimpieza_1').style['mix-blend-mode'] = 'normal';
+        var layer_reasintervenidasparalimpieza_1 = new L.geoJson(json_reasintervenidasparalimpieza_1, {
             attribution: '',
             interactive: true,
-            dataVar: 'json_levantamiento_CircunvCamBahia_Idahue_1',
-            layerName: 'layer_levantamiento_CircunvCamBahia_Idahue_1',
-            pane: 'pane_levantamiento_CircunvCamBahia_Idahue_1',
-            onEachFeature: pop_levantamiento_CircunvCamBahia_Idahue_1,
-            style: style_levantamiento_CircunvCamBahia_Idahue_1_0,
+            dataVar: 'json_reasintervenidasparalimpieza_1',
+            layerName: 'layer_reasintervenidasparalimpieza_1',
+            pane: 'pane_reasintervenidasparalimpieza_1',
+            onEachFeature: pop_reasintervenidasparalimpieza_1,
+            style: style_reasintervenidasparalimpieza_1_0,
         });
-        bounds_group.addLayer(layer_levantamiento_CircunvCamBahia_Idahue_1);
-        map.addLayer(layer_levantamiento_CircunvCamBahia_Idahue_1);
+        bounds_group.addLayer(layer_reasintervenidasparalimpieza_1);
+        map.addLayer(layer_reasintervenidasparalimpieza_1);
         function pop_Colector_2(feature, layer) {
             var popupContent = '<table>\
                     <tr>\
@@ -398,7 +398,7 @@
         {label: '<b>Red_publica</b>',  selectAllCheckbox: true, children: [
             {label: 'Cámara<br /><table><tr><td style="text-align: center;"><img src="legend/Cmara_3_PENDIENTE0.png" /></td><td>PENDIENTE</td></tr><tr><td style="text-align: center;"><img src="legend/Cmara_3_INSPECCIONADA1.png" /></td><td>INSPECCIONADA</td></tr><tr><td style="text-align: center;"><img src="legend/Cmara_3_CONNIVEL2.png" /></td><td>CON NIVEL</td></tr><tr><td style="text-align: center;"><img src="legend/Cmara_3_SELLADA3.png" /></td><td>SELLADA</td></tr><tr><td style="text-align: center;"><img src="legend/Cmara_3_NOENCONTRADA4.png" /></td><td>NO ENCONTRADA</td></tr><tr><td style="text-align: center;"><img src="legend/Cmara_3_SINACCESO5.png" /></td><td>SIN ACCESO</td></tr></table>', layer: layer_Cmara_3},
             {label: '<img src="legend/Colector_2.png" /> Colector', layer: layer_Colector_2},
-            {label: '<img src="legend/levantamiento_CircunvCamBahia_Idahue_1.png" /> levantamiento_Circunv-CamBahia_Idahue', layer: layer_levantamiento_CircunvCamBahia_Idahue_1},]},
+            {label: '<img src="legend/reasintervenidasparalimpieza_1.png" /> Áreas intervenidas para limpieza', layer: layer_reasintervenidasparalimpieza_1},]},
             {label: "Google Satellite Hybrid", layer: layer_GoogleSatelliteHybrid_0, radioGroup: 'bm' },]
         var lay = L.control.layers.tree(null, overlaysTree,{
             //namedToggle: true,
