@@ -39,12 +39,13 @@
         <script src="js/labels.js"></script>
         <script src="js/leaflet.photon.js"></script>
         <script src="js/leaflet-measure.js"></script>
-        <script src="data/Colector_1.js"></script>
-        <script src="data/Cmara_2.js"></script>
+        <script src="data/levantamiento_CircunvCamBahia_Idahue_1.js"></script>
+        <script src="data/Colector_2.js"></script>
+        <script src="data/Cmara_3.js"></script>
         <script>
         var map = L.map('map', {
             zoomControl:false, maxZoom:28, minZoom:1
-        }).fitBounds([[-36.85126980771072,-73.07754984179698],[-36.847438769547956,-73.07226895823123]]);
+        }).fitBounds([[-36.85178513987474,-73.07879315509523],[-36.847463666412715,-73.06952387059293]]);
         var hash = new L.Hash(map);
         map.attributionControl.setPrefix('<a href="https://github.com/qgis2web/qgis2web" target="_blank">qgis2web</a> &middot; <a href="https://leafletjs.com" title="A JS library for interactive maps">Leaflet</a> &middot; <a href="https://qgis.org">QGIS</a>');
         var autolinker = new Autolinker({truncate: {length: 30, location: 'smart'}});
@@ -150,7 +151,73 @@
         });
         layer_GoogleSatelliteHybrid_0;
         map.addLayer(layer_GoogleSatelliteHybrid_0);
-        function pop_Colector_1(feature, layer) {
+        function pop_levantamiento_CircunvCamBahia_Idahue_1(feature, layer) {
+            var popupContent = '<table>\
+                    <tr>\
+                        <th scope="row">nombre</th>\
+                        <td class="visible-with-data" id="nombre">' + (feature.properties['nombre'] !== null ? autolinker.link(String(feature.properties['nombre']).replace(/'/g, '\'').toLocaleString()) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <th scope="row">descripcion</th>\
+                        <td class="visible-with-data" id="descripcion">' + (feature.properties['descripcion'] !== null ? autolinker.link(String(feature.properties['descripcion']).replace(/'/g, '\'').toLocaleString()) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <th scope="row">foto1</th>\
+                        <td class="visible-with-data" id="foto1">' + (feature.properties['foto1'] !== null ? '<img src="images/' + String(feature.properties['foto1']).replace(/[\\/:]/g, '_').trim().replace(/'/g, '\'').replace(/"/g, '&quot;') + '">' : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <th scope="row">foto2</th>\
+                        <td class="visible-with-data" id="foto2">' + (feature.properties['foto2'] !== null ? '<img src="images/' + String(feature.properties['foto2']).replace(/[\\/:]/g, '_').trim().replace(/'/g, '\'').replace(/"/g, '&quot;') + '">' : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <th scope="row">foto3</th>\
+                        <td class="visible-with-data" id="foto3">' + (feature.properties['foto3'] !== null ? '<img src="images/' + String(feature.properties['foto3']).replace(/[\\/:]/g, '_').trim().replace(/'/g, '\'').replace(/"/g, '&quot;') + '">' : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <th scope="row">foto4</th>\
+                        <td class="visible-with-data" id="foto4">' + (feature.properties['foto4'] !== null ? '<img src="images/' + String(feature.properties['foto4']).replace(/[\\/:]/g, '_').trim().replace(/'/g, '\'').replace(/"/g, '&quot;') + '">' : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <th scope="row">foto5</th>\
+                        <td class="visible-with-data" id="foto5">' + (feature.properties['foto5'] !== null ? '<img src="images/' + String(feature.properties['foto5']).replace(/[\\/:]/g, '_').trim().replace(/'/g, '\'').replace(/"/g, '&quot;') + '">' : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <th scope="row">foto6</th>\
+                        <td class="visible-with-data" id="foto6">' + (feature.properties['foto6'] !== null ? '<img src="images/' + String(feature.properties['foto6']).replace(/[\\/:]/g, '_').trim().replace(/'/g, '\'').replace(/"/g, '&quot;') + '">' : '') + '</td>\
+                    </tr>\
+                </table>';
+            var content = removeEmptyRowsFromPopupContent(popupContent, feature);
+			layer.on('popupopen', function(e) {
+				addClassToPopupIfMedia(content, e.popup);
+			});
+			layer.bindPopup(content, { maxHeight: 400 });
+        }
+
+        function style_levantamiento_CircunvCamBahia_Idahue_1_0() {
+            return {
+                pane: 'pane_levantamiento_CircunvCamBahia_Idahue_1',
+                stroke: false, 
+                fill: true,
+                fillOpacity: 1,
+                fillColor: 'rgba(0,153,28,1.0)',
+                interactive: true,
+            }
+        }
+        map.createPane('pane_levantamiento_CircunvCamBahia_Idahue_1');
+        map.getPane('pane_levantamiento_CircunvCamBahia_Idahue_1').style.zIndex = 401;
+        map.getPane('pane_levantamiento_CircunvCamBahia_Idahue_1').style['mix-blend-mode'] = 'normal';
+        var layer_levantamiento_CircunvCamBahia_Idahue_1 = new L.geoJson(json_levantamiento_CircunvCamBahia_Idahue_1, {
+            attribution: '',
+            interactive: true,
+            dataVar: 'json_levantamiento_CircunvCamBahia_Idahue_1',
+            layerName: 'layer_levantamiento_CircunvCamBahia_Idahue_1',
+            pane: 'pane_levantamiento_CircunvCamBahia_Idahue_1',
+            onEachFeature: pop_levantamiento_CircunvCamBahia_Idahue_1,
+            style: style_levantamiento_CircunvCamBahia_Idahue_1_0,
+        });
+        bounds_group.addLayer(layer_levantamiento_CircunvCamBahia_Idahue_1);
+        map.addLayer(layer_levantamiento_CircunvCamBahia_Idahue_1);
+        function pop_Colector_2(feature, layer) {
             var popupContent = '<table>\
                     <tr>\
                         <td colspan="2">' + (feature.properties['IDENTIFICA'] !== null ? autolinker.link(String(feature.properties['IDENTIFICA']).replace(/'/g, '\'').toLocaleString()) : '') + '</td>\
@@ -172,9 +239,9 @@
 			layer.bindPopup(content, { maxHeight: 400 });
         }
 
-        function style_Colector_1_0() {
+        function style_Colector_2_0() {
             return {
-                pane: 'pane_Colector_1',
+                pane: 'pane_Colector_2',
                 opacity: 1,
                 color: 'rgba(255,0,0,1.0)',
                 dashArray: '',
@@ -185,21 +252,21 @@
                 interactive: false,
             }
         }
-        map.createPane('pane_Colector_1');
-        map.getPane('pane_Colector_1').style.zIndex = 401;
-        map.getPane('pane_Colector_1').style['mix-blend-mode'] = 'normal';
-        var layer_Colector_1 = new L.geoJson(json_Colector_1, {
+        map.createPane('pane_Colector_2');
+        map.getPane('pane_Colector_2').style.zIndex = 402;
+        map.getPane('pane_Colector_2').style['mix-blend-mode'] = 'normal';
+        var layer_Colector_2 = new L.geoJson(json_Colector_2, {
             attribution: '',
             interactive: false,
-            dataVar: 'json_Colector_1',
-            layerName: 'layer_Colector_1',
-            pane: 'pane_Colector_1',
-            onEachFeature: pop_Colector_1,
-            style: style_Colector_1_0,
+            dataVar: 'json_Colector_2',
+            layerName: 'layer_Colector_2',
+            pane: 'pane_Colector_2',
+            onEachFeature: pop_Colector_2,
+            style: style_Colector_2_0,
         });
-        bounds_group.addLayer(layer_Colector_1);
-        map.addLayer(layer_Colector_1);
-        function pop_Cmara_2(feature, layer) {
+        bounds_group.addLayer(layer_Colector_2);
+        map.addLayer(layer_Colector_2);
+        function pop_Cmara_3(feature, layer) {
             var popupContent = '<table>\
                     <tr>\
                         <th scope="row">IDENTIFICA</th>\
@@ -222,6 +289,10 @@
                         <td class="visible-with-data" id="FOTOGRAFIA_INTERIOR">' + (feature.properties['FOTOGRAFIA_INTERIOR'] !== null ? '<img src="images/' + String(feature.properties['FOTOGRAFIA_INTERIOR']).replace(/[\\/:]/g, '_').trim().replace(/'/g, '\'').replace(/"/g, '&quot;') + '">' : '') + '</td>\
                     </tr>\
                     <tr>\
+                        <th scope="row">FOTOGRAFIA_LIMPIEZA</th>\
+                        <td class="visible-with-data" id="FOTOGRAFIA_LIMPIEZA">' + (feature.properties['FOTOGRAFIA_LIMPIEZA'] !== null ? '<img src="images/' + String(feature.properties['FOTOGRAFIA_LIMPIEZA']).replace(/[\\/:]/g, '_').trim().replace(/'/g, '\'').replace(/"/g, '&quot;') + '">' : '') + '</td>\
+                    </tr>\
+                    <tr>\
                         <th scope="row">OBSERVACIONES</th>\
                         <td class="visible-with-data" id="OBSERVACIONES">' + (feature.properties['OBSERVACIONES'] !== null ? autolinker.link(String(feature.properties['OBSERVACIONES']).replace(/'/g, '\'').toLocaleString()) : '') + '</td>\
                     </tr>\
@@ -233,12 +304,12 @@
 			layer.bindPopup(content, { maxHeight: 400 });
         }
 
-        function style_Cmara_2_0(feature) {
+        function style_Cmara_3_0(feature) {
             switch(String(feature.properties['ESTADO'])) {
                 case 'PENDIENTE':
                     return {
-                pane: 'pane_Cmara_2',
-                radius: 4.0,
+                pane: 'pane_Cmara_3',
+                radius: 6.0,
                 stroke: false,
                 fill: true,
                 fillOpacity: 1,
@@ -248,8 +319,8 @@
                     break;
                 case 'INSPECCIONADA':
                     return {
-                pane: 'pane_Cmara_2',
-                radius: 4.0,
+                pane: 'pane_Cmara_3',
+                radius: 6.0,
                 stroke: false,
                 fill: true,
                 fillOpacity: 1,
@@ -259,8 +330,8 @@
                     break;
                 case 'CON NIVEL':
                     return {
-                pane: 'pane_Cmara_2',
-                radius: 4.0,
+                pane: 'pane_Cmara_3',
+                radius: 6.0,
                 stroke: false,
                 fill: true,
                 fillOpacity: 1,
@@ -270,8 +341,8 @@
                     break;
                 case 'SELLADA':
                     return {
-                pane: 'pane_Cmara_2',
-                radius: 4.0,
+                pane: 'pane_Cmara_3',
+                radius: 6.0,
                 stroke: false,
                 fill: true,
                 fillOpacity: 1,
@@ -281,8 +352,8 @@
                     break;
                 case 'NO ENCONTRADA':
                     return {
-                pane: 'pane_Cmara_2',
-                radius: 4.0,
+                pane: 'pane_Cmara_3',
+                radius: 6.0,
                 stroke: false,
                 fill: true,
                 fillOpacity: 1,
@@ -292,8 +363,8 @@
                     break;
                 case 'SIN ACCESO':
                     return {
-                pane: 'pane_Cmara_2',
-                radius: 4.0,
+                pane: 'pane_Cmara_3',
+                radius: 6.0,
                 stroke: false,
                 fill: true,
                 fillOpacity: 1,
@@ -303,30 +374,31 @@
                     break;
             }
         }
-        map.createPane('pane_Cmara_2');
-        map.getPane('pane_Cmara_2').style.zIndex = 402;
-        map.getPane('pane_Cmara_2').style['mix-blend-mode'] = 'normal';
-        var layer_Cmara_2 = new L.geoJson(json_Cmara_2, {
+        map.createPane('pane_Cmara_3');
+        map.getPane('pane_Cmara_3').style.zIndex = 403;
+        map.getPane('pane_Cmara_3').style['mix-blend-mode'] = 'normal';
+        var layer_Cmara_3 = new L.geoJson(json_Cmara_3, {
             attribution: '',
             interactive: true,
-            dataVar: 'json_Cmara_2',
-            layerName: 'layer_Cmara_2',
-            pane: 'pane_Cmara_2',
-            onEachFeature: pop_Cmara_2,
+            dataVar: 'json_Cmara_3',
+            layerName: 'layer_Cmara_3',
+            pane: 'pane_Cmara_3',
+            onEachFeature: pop_Cmara_3,
             pointToLayer: function (feature, latlng) {
                 var context = {
                     feature: feature,
                     variables: {}
                 };
-                return L.circleMarker(latlng, style_Cmara_2_0(feature));
+                return L.circleMarker(latlng, style_Cmara_3_0(feature));
             },
         });
-        bounds_group.addLayer(layer_Cmara_2);
-        map.addLayer(layer_Cmara_2);
+        bounds_group.addLayer(layer_Cmara_3);
+        map.addLayer(layer_Cmara_3);
         var overlaysTree = [
         {label: '<b>Red_publica</b>',  selectAllCheckbox: true, children: [
-            {label: 'Cámara<br /><table><tr><td style="text-align: center;"><img src="legend/Cmara_2_PENDIENTE0.png" /></td><td>PENDIENTE</td></tr><tr><td style="text-align: center;"><img src="legend/Cmara_2_INSPECCIONADA1.png" /></td><td>INSPECCIONADA</td></tr><tr><td style="text-align: center;"><img src="legend/Cmara_2_CONNIVEL2.png" /></td><td>CON NIVEL</td></tr><tr><td style="text-align: center;"><img src="legend/Cmara_2_SELLADA3.png" /></td><td>SELLADA</td></tr><tr><td style="text-align: center;"><img src="legend/Cmara_2_NOENCONTRADA4.png" /></td><td>NO ENCONTRADA</td></tr><tr><td style="text-align: center;"><img src="legend/Cmara_2_SINACCESO5.png" /></td><td>SIN ACCESO</td></tr></table>', layer: layer_Cmara_2},
-            {label: '<img src="legend/Colector_1.png" /> Colector', layer: layer_Colector_1},]},
+            {label: 'Cámara<br /><table><tr><td style="text-align: center;"><img src="legend/Cmara_3_PENDIENTE0.png" /></td><td>PENDIENTE</td></tr><tr><td style="text-align: center;"><img src="legend/Cmara_3_INSPECCIONADA1.png" /></td><td>INSPECCIONADA</td></tr><tr><td style="text-align: center;"><img src="legend/Cmara_3_CONNIVEL2.png" /></td><td>CON NIVEL</td></tr><tr><td style="text-align: center;"><img src="legend/Cmara_3_SELLADA3.png" /></td><td>SELLADA</td></tr><tr><td style="text-align: center;"><img src="legend/Cmara_3_NOENCONTRADA4.png" /></td><td>NO ENCONTRADA</td></tr><tr><td style="text-align: center;"><img src="legend/Cmara_3_SINACCESO5.png" /></td><td>SIN ACCESO</td></tr></table>', layer: layer_Cmara_3},
+            {label: '<img src="legend/Colector_2.png" /> Colector', layer: layer_Colector_2},
+            {label: '<img src="legend/levantamiento_CircunvCamBahia_Idahue_1.png" /> levantamiento_Circunv-CamBahia_Idahue', layer: layer_levantamiento_CircunvCamBahia_Idahue_1},]},
             {label: "Google Satellite Hybrid", layer: layer_GoogleSatelliteHybrid_0, radioGroup: 'bm' },]
         var lay = L.control.layers.tree(null, overlaysTree,{
             //namedToggle: true,
@@ -388,29 +460,54 @@
                 }, 500);
             }  
         });       
+        map.on("zoomend", function(){
+
+                if (map.hasLayer(layer_Cmara_3)) {
+                    if (map.getZoom() <= 16 && map.getZoom() >= 19) {
+                        layer_Cmara_3.eachLayer(function (layer) {
+                            layer.openTooltip();
+                        });
+                    } else {
+                        layer_Cmara_3.eachLayer(function (layer) {
+                            layer.closeTooltip();
+                        });
+                    }
+                }
+        });
         setBounds();
         var i = 0;
-        layer_Cmara_2.eachLayer(function(layer) {
+        layer_Cmara_3.eachLayer(function(layer) {
             var context = {
                 feature: layer.feature,
                 variables: {}
             };
-            layer.bindTooltip((layer.feature.properties['IDENTIFICA'] !== null?String('<div style="color: #323232; font-size: 10pt; font-family: \'Open Sans\', sans-serif;">' + layer.feature.properties['IDENTIFICA']) + '</div>':''), {permanent: true, offset: [-0, -16], className: 'css_Cmara_2'});
+            layer.bindTooltip((layer.feature.properties['IDENTIFICA'] !== null?String('<div style="color: #323232; font-size: 12pt; font-family: \'Open Sans\', sans-serif;">' + layer.feature.properties['IDENTIFICA']) + '</div>':''), {permanent: true, offset: [-0, -16], className: 'css_Cmara_3'});
             labels.push(layer);
             totalMarkers += 1;
               layer.added = true;
               addLabel(layer, i);
               i++;
         });
-        resetLabels([layer_Colector_1,layer_Cmara_2]);
+                if (map.hasLayer(layer_Cmara_3)) {
+                    if (map.getZoom() <= 16 && map.getZoom() >= 19) {
+                        layer_Cmara_3.eachLayer(function (layer) {
+                            layer.openTooltip();
+                        });
+                    } else {
+                        layer_Cmara_3.eachLayer(function (layer) {
+                            layer.closeTooltip();
+                        });
+                    }
+                }
+        resetLabels([layer_Colector_2,layer_Cmara_3]);
         map.on("zoomend", function(){
-            resetLabels([layer_Colector_1,layer_Cmara_2]);
+            resetLabels([layer_Colector_2,layer_Cmara_3]);
         });
         map.on("layeradd", function(){
-            resetLabels([layer_Colector_1,layer_Cmara_2]);
+            resetLabels([layer_Colector_2,layer_Cmara_3]);
         });
         map.on("layerremove", function(){
-            resetLabels([layer_Colector_1,layer_Cmara_2]);
+            resetLabels([layer_Colector_2,layer_Cmara_3]);
         });
         </script>        
     </body>
