@@ -86,13 +86,13 @@ var group_RedASReferencial = new ol.layer.Group({
 
 lyr_OpenStreetMap_0.setVisible(true);lyr_GoogleSatelliteHybrid_1.setVisible(true);lyr_Obstruccindetectada_2.setVisible(true);lyr_Colector_3.setVisible(true);lyr_Cmara_4.setVisible(true);
 var layersList = [lyr_OpenStreetMap_0,lyr_GoogleSatelliteHybrid_1,group_RedASLevantada];
-lyr_Obstruccindetectada_2.set('fieldAliases', {'fid': 'fid', });
+lyr_Obstruccindetectada_2.set('fieldAliases', {'fid': 'fid', 'FOTO1': 'FOTO1', 'FOTO2': 'FOTO2', 'FOTO3': 'FOTO3', 'DESCRIPCIÓN': 'DESCRIPCIÓN', });
 lyr_Colector_3.set('fieldAliases', {'fid': 'fid', 'IDENTIFICA': 'IDENTIFICA', 'DIAMETRO': 'DIAMETRO', 'MATERIAL': 'MATERIAL', 'X': 'X', 'Y': 'Y', 'ESTADO': 'ESTADO', });
 lyr_Cmara_4.set('fieldAliases', {'fid': 'fid', 'IDENTIFICA': 'IDENTIFICA', 'ESTADO': 'ESTADO', 'ESCALINES': 'ESCALINES', 'FOTOGRAFIA_PANORAMICA': 'FOTOGRAFIA_PANORAMICA', 'FOTOGRAFIA_INTERIOR': 'FOTOGRAFIA_INTERIOR', 'FOTOGRAFIA_LIMPIEZA': 'FOTOGRAFIA_LIMPIEZA', 'OBSERVACIONES': 'OBSERVACIONES', });
-lyr_Obstruccindetectada_2.set('fieldImages', {'fid': '', });
+lyr_Obstruccindetectada_2.set('fieldImages', {'fid': 'TextEdit', 'FOTO1': 'ExternalResource', 'FOTO2': 'ExternalResource', 'FOTO3': 'ExternalResource', 'DESCRIPCIÓN': 'TextEdit', });
 lyr_Colector_3.set('fieldImages', {'fid': 'TextEdit', 'IDENTIFICA': '', 'DIAMETRO': 'ValueMap', 'MATERIAL': '', 'X': '', 'Y': '', 'ESTADO': 'ValueMap', });
 lyr_Cmara_4.set('fieldImages', {'fid': 'TextEdit', 'IDENTIFICA': 'TextEdit', 'ESTADO': 'ValueMap', 'ESCALINES': 'Range', 'FOTOGRAFIA_PANORAMICA': 'ExternalResource', 'FOTOGRAFIA_INTERIOR': 'ExternalResource', 'FOTOGRAFIA_LIMPIEZA': 'ExternalResource', 'OBSERVACIONES': 'TextEdit', });
-lyr_Obstruccindetectada_2.set('fieldLabels', {'fid': 'no label', });
+lyr_Obstruccindetectada_2.set('fieldLabels', {'fid': 'inline label - always visible', 'FOTO1': 'inline label - visible with data', 'FOTO2': 'inline label - visible with data', 'FOTO3': 'inline label - visible with data', 'DESCRIPCIÓN': 'inline label - visible with data', });
 lyr_Colector_3.set('fieldLabels', {'fid': 'hidden field', 'IDENTIFICA': 'inline label - visible with data', 'DIAMETRO': 'hidden field', 'MATERIAL': 'hidden field', 'X': 'hidden field', 'Y': 'hidden field', 'ESTADO': 'hidden field', });
 lyr_Cmara_4.set('fieldLabels', {'fid': 'hidden field', 'IDENTIFICA': 'inline label - visible with data', 'ESTADO': 'inline label - visible with data', 'ESCALINES': 'inline label - visible with data', 'FOTOGRAFIA_PANORAMICA': 'inline label - visible with data', 'FOTOGRAFIA_INTERIOR': 'inline label - visible with data', 'FOTOGRAFIA_LIMPIEZA': 'inline label - visible with data', 'OBSERVACIONES': 'inline label - visible with data', });
 lyr_Cmara_4.on('precompose', function(evt) {
