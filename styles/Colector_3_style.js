@@ -9,8 +9,8 @@ var style_Colector_3 = function(feature, resolution){
     
     var labelText = ""; 
     var value = feature.get("");
-    var labelFont = "13.0px \'Open Sans\', sans-serif";
-    var labelFill = "#323232";
+    var labelFont = "15.600000000000001px \'Open Sans\', sans-serif";
+    var labelFill = "#ffffff";
     var bufferColor = "";
     var bufferWidth = 0;
     var textAlign = 'left';
@@ -19,7 +19,7 @@ var style_Colector_3 = function(feature, resolution){
     var overflow = false;
     var repeat = 0;
     var placement = 'line';
-    if ("" !== null) {
+    if ("" !== null && resolution > 0 && resolution < 1) {
         labelText = String("");
     }
     var style = [ new ol.style.Style({

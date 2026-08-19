@@ -1,0 +1,1 @@
+var json_Obstruccindetectada_2 = {"type":"FeatureCollection","name":"Obstruccindetectada_2","crs":{"type":"name","properties":{"name":"urn:ogc:def:crs:OGC:1.3:CRS84"}},"features":[{"type":"Feature","properties":{"fid":"1"},"geometry":{"type":"Point","coordinates":[-73.074507847765929,-36.850531587283847]}}]}
